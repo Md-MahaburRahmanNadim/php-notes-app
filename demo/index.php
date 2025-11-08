@@ -7,19 +7,19 @@
 </head>
 <body>
      <?php 
-        $name = 'Al Quran';
-        $read = true;
-
-        if($read){
-            $message = "I have read this book today $name";
-        }else{
-            $message = "i dont have read this book $name";
-        }
+    $books =[
+        'Al Quran',
+         "Al Hadis",
+         "Life story of Profet Mohamad (SA.)"
+    ]
         ?>
     <h1>
         <?php 
+        foreach($books as $book):?>
+        <li> <?= $book?> </li>
 
-echo $message
+
+        <?php endforeach
         ?>
        
     </h1>
