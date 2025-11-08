@@ -8,7 +8,11 @@
 <body>
     <h1>
         <?php 
-        echo 'Assalamolikum'
+        $greating = 'Assalamoikum';
+        // echo $greating . ' '.'everyone';
+        echo '$greating everyone'. PHP_EOL ; // this ('')single quet dont pars the variable
+        echo '<br>';
+        echo "$greating Everyone";
         ?>
     </h1>
 </body>
