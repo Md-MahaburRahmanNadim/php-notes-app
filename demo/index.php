@@ -6,14 +6,22 @@
     <title>Document</title>
 </head>
 <body>
+     <?php 
+        $name = 'Al Quran';
+        $read = true;
+
+        if($read){
+            $message = "I have read this book today $name";
+        }else{
+            $message = "i dont have read this book $name";
+        }
+        ?>
     <h1>
         <?php 
-        $greating = 'Assalamoikum';
-        // echo $greating . ' '.'everyone';
-        echo '$greating everyone'. PHP_EOL ; // this ('')single quet dont pars the variable
-        echo '<br>';
-        echo "$greating Everyone";
+
+echo $message
         ?>
+       
     </h1>
 </body>
 </html>
