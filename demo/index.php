@@ -6,21 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-     <?php 
-    $books =[
-        'Al Quran',
-         "Al Hadis",
-         "Life story of Profet Mohamad (SA.)"
-    ]
-        ?>
+    <?php 
+    $book ='Al Quran';
+    $read = true;
+    if($read){
+        $message = 'yes';
+    }else{
+        $message = 'no';
+    }
+    
+    ?>
+     
     <h1>
-        <?php 
-        foreach($books as $book):?>
-        <li> <?= $book?> </li>
-
-
-        <?php endforeach
-        ?>
+        <?php echo "Do you read the book of $book daily? $message" ?>
        
     </h1>
 </body>
