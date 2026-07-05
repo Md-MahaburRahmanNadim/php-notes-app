@@ -7,19 +7,24 @@
 </head>
 <body>
     <?php 
-    $book ='Al Quran';
-    $read = true;
-    if($read){
-        $message = 'yes';
-    }else{
-        $message = 'no';
-    }
+    $books = [
+        'Al Quran',
+        "Hadis",
+        'Din',
+        "Sunnah"
+    ]
+   
     
     ?>
-     
-    <h1>
-        <?php echo "Do you read the book of $book daily? $message" ?>
-       
-    </h1>
+      <ul>
+    
+        <?php foreach($books as $book):?>
+           
+                <li><?= $book?></li>
+            
+    
+        <?php endforeach ?>
+       </ul>
+    
 </body>
 </html>
