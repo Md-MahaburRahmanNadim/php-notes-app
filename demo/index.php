@@ -39,25 +39,25 @@
 // anonumas or lambda fn
 //    $filterByAuthor = function ($books,$author):Array{
 // more generic filter fn
-$filter = function ($items,$fn){
-        $filterItems =[];
-        foreach($items as $item){
-            if($fn($item)){
-                $filterItems[] = $item;
-                /* need to learn 
-
+// $filter = function ($items,$fn){
+        // $filterItems =[];
+        // foreach($items as $item){
+            // if($fn($item)){
+                // $filterItems[] = $item;
+                // /* need to learn 
+// 
                 // different between 
                 // $filterBooks = $book;
-                *$filterBooks[] = $book;
-                */
-            }
-            
-        }
-        return $filterItems;
-    };
+                // *$filterBooks[] = $book;
+                // */
+            // }
+            // 
+        // }
+        // return $filterItems;
+    // };
 
-    $filteredBooks = $filter( $books,function($item){
-        return $item['author'] === 'allah';
+    $filteredBooks = array_filter( $books,function($book){
+        return $book['author'] === 'allah';
 
     });
     ?>
