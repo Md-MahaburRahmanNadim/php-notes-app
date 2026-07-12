@@ -36,12 +36,14 @@
         'url'=> 'Hazrat Mohamad (S. A.)'
      ]
     ];
-
-    function filterByName($books,$author):Array{
-        $filterBooks =[];
-        foreach($books as $book){
-            if($book['author'] ===$author){
-                $filterBooks[] = $book;
+// anonumas or lambda fn
+//    $filterByAuthor = function ($books,$author):Array{
+// more generic filter fn
+$filter = function ($items,$key,$value){
+        $filterItems =[];
+        foreach($items as $item){
+            if($item[$key] ===$value){
+                $filterItems[] = $item;
                 /* need to learn 
 
                 // different between 
@@ -51,9 +53,10 @@
             }
             
         }
-        return $filterBooks;
-    }
-    $author = 'allah';
+        return $filterItems;
+    };
+
+    $filteredBooks = $filter( $books,'author','allah')
     ?>
       <ul>
     
@@ -72,7 +75,9 @@
        <h3>only book for <?= $author?></h3>
        <ul>
         <?php
-            foreach(filterByName($books,$author) as $book):?>
+            // foreach(filterByAuthor($books,$author) as $book):
+            foreach($filteredBooks as $book):?>
+            <!-- extracted variable -->
             <li> <?=$book['url'] ?></li>
 
             <?php endforeach ?>
