@@ -39,10 +39,10 @@
 // anonumas or lambda fn
 //    $filterByAuthor = function ($books,$author):Array{
 // more generic filter fn
-$filter = function ($items,$key,$value){
+$filter = function ($items,$fn){
         $filterItems =[];
         foreach($items as $item){
-            if($item[$key] ===$value){
+            if($fn($item)){
                 $filterItems[] = $item;
                 /* need to learn 
 
@@ -56,7 +56,10 @@ $filter = function ($items,$key,$value){
         return $filterItems;
     };
 
-    $filteredBooks = $filter( $books,'author','allah')
+    $filteredBooks = $filter( $books,function($item){
+        return $item['author'] === 'allah';
+
+    });
     ?>
       <ul>
     
