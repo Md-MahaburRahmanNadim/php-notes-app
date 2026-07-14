@@ -14,9 +14,20 @@ $id = $_GET['id'];
  * its better use the params binding to the statement (:id or ?)
  * 
  */
-
+//one way
+// $query = "select * from users2 where id < ?";
 // dd($query);
-$posts = $db->query($query)->fetchAll();
+// $posts = $db->query($query,[$id])->fetchAll();
+
+/**
+ * another way
+ * associtive way
+ */
+$query = "select * from users2 where id < :id"; 
+// where we need to use associtive array 
+// $posts = $db->query($query,[':id'=>$id])->fetchAll();
+$posts = $db->query($query,['id'=>$id])->fetchAll(); // both works fine
+
 // dd($_GET);
 
 

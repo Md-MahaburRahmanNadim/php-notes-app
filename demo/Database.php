@@ -17,10 +17,10 @@ $this->$connection = new PDO($dns,$username,$password,[
 ]);
 
     }
-    public function query($query){
+    public function query($query,$parms=[]){
 
 $statement = $this->$connection->prepare($query);
-$statement->execute();
+$statement->execute($parms);
 // $posts = $statement->fetchAll();
 return $statement;
     }
