@@ -4,7 +4,7 @@ include_once 'partials/nav.php';
 include_once 'partials/banner.php';
 
 /**
- * start from 4:24
+ * start from 4:32
  */
 ?>
   

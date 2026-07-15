@@ -13,7 +13,7 @@ include_once 'partials/banner.php';
    <ul>
        <p>
         
-        <?= $note['body']
+        <?= htmlspecialchars($note['body'])
             ?>
        </p>     
    </ul>

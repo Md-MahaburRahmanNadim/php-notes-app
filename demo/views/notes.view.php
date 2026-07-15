@@ -13,7 +13,7 @@ include_once 'partials/banner.php';
         <?php
         foreach($notes as $note):?>
         <li>
-        <a href="/note?id=<?= $note['id']?>"> <?= $note['body']?> </a>
+        <a href="/note?id=<?= $note['id']?>"> <?= htmlspecialchars($note['body'])?> </a>
         </li>
         <?php endforeach
         ?>
