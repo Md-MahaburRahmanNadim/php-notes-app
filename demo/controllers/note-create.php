@@ -1,7 +1,10 @@
 <?php
+$heading = 'Create Note';
 $config = include_once 'config.php';
 $db =new Database($config['database']);
-// dd('note create');
-$heading = 'Create Note';
+
+if($_SERVER["REQUEST_METHOD"]==='POST'){
+}
+
 
 include './views/note-create.view.php';
