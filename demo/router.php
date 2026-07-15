@@ -4,7 +4,6 @@ $fullUri = $_SERVER['REQUEST_URI'];
 // to get only url (path) not the query parms
 $uri = parse_url($fullUri)['path'];
 $routes = include_once 'routes.php';
-
 function abort($code=404 ){
     http_response_code($code);
     require_once "views/{$code}.php";

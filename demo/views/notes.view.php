@@ -20,7 +20,7 @@ include_once 'partials/banner.php';
    </ul>
    <p>
      <li>
-          <a href="">Create Note</a>
+          <a href="/note/create">Create Note</a>
      </li>
    </p>
     <?php

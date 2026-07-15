@@ -2,27 +2,33 @@
 include_once 'functions.php';
 include_once 'Database.php';
 include_once 'Response.php';
+
 include_once 'router.php';
 
+// $config = include_once 'config.php';
+// $db = new Database($config['database']);
+// $id = $_GET['id'];
 
 
-$id = $_GET['id'];
+// $query = "select * from users2 "; 
 
-$query = "select * from users2 where id < :id"; 
-
-$posts = $db->query($query,['id'=>$id])->fetchAll(); // both works fine
-// dd($posts);
-// dd($_GET);
-
-
-
-// dd($posts);
-foreach ($posts as $post) :?>
+// $posts = $db->query($query)->get(); // both works fine
+// // dd($posts);
+// // dd($_GET);
+/**
+?>
 
 
+// <h1>all post of the users</h1>
+// <?php
+// foreach ($posts as $post) :?>
 
-<ul>
-    <li><?=$post['name']?></li>
-</ul>
 
-<?php endforeach?>
+// <ul>
+//     <li><?=$post['name']?></li>
+// </ul>
+
+// <?php endforeach;
+
+// ?>
+ */
