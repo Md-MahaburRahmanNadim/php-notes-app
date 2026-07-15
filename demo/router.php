@@ -7,6 +7,9 @@ $uri = parse_url($fullUri)['path'];
 $routes =[
     '/'=>'controllers/index.php',   
     '/about'=>'controllers/about.php',
+    '/notes'=>'controllers/notes.php',
+    '/note'=>'controllers/note.php',
+
     '/contract'=>'controllers/contract.php'
     ];
 
