@@ -18,6 +18,11 @@ include_once 'partials/banner.php';
         <?php endforeach
         ?>
    </ul>
+   <p>
+     <li>
+          <a href="">Create Note</a>
+     </li>
+   </p>
     <?php
     include_once 'partials/footer.php'
     ?>

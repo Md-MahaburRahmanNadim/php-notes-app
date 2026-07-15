@@ -3,15 +3,7 @@
 $fullUri = $_SERVER['REQUEST_URI'];
 // to get only url (path) not the query parms
 $uri = parse_url($fullUri)['path'];
-
-$routes =[
-    '/'=>'controllers/index.php',   
-    '/about'=>'controllers/about.php',
-    '/notes'=>'controllers/notes.php',
-    '/note'=>'controllers/note.php',
-
-    '/contract'=>'controllers/contract.php'
-    ];
+$routes = include_once 'routes.php';
 
 function abort($code=404 ){
     http_response_code($code);
