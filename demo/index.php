@@ -1,6 +1,7 @@
 <?php
 include_once 'functions.php';
 include_once 'Database.php';
+include_once 'Response.php';
 include_once 'router.php';
 
 

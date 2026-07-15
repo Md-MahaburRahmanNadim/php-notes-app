@@ -11,11 +11,17 @@ $note = $db->query("select * from notes where id =:id",[':id'=>$id])->fetch();
 if(!$note){
     abort();
 }
+/**
+ * Magic number.
+ * 
+ *  If some number we put the it not clear the meaning then we can wrap those into a variable of class constant. so that it provide clearity to the programer.
+ * 
+ */
+// $forbidden = 403; it ok but we need to use this in may different file thats why it good option to create a file with a Response class. 
 
-// if data found in db but the user is not authorize then show 403 unauthorized page
 
 if($note['user_id'] !== $courrentUser){
-    abort(403);
+    abort(Response::FORBIDDEN);
 }
 
 
