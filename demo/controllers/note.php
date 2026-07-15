@@ -5,24 +5,28 @@ $db= new Database($config['database']);
 $courrentUser = 11;
 $heading = 'My Notes';
 $id = $_GET['id'];
-$note = $db->query("select * from notes where id =:id",[':id'=>$id])->fetch();
-// dd($note);
-// if the note data not found in db the show 404 not found page
-if(!$note){
-    abort();
-}
 /**
- * Magic number.
  * 
- *  If some number we put the it not clear the meaning then we can wrap those into a variable of class constant. so that it provide clearity to the programer.
+ * what if we can use a method fetchOrAbort or findOrFail 
+ * now we use PDOStatement method which are we dont won. 
+ * 
+ * if we return the instance on the query method then we can use that instance and we call any method on that instance ( Database ) class
+ */
+
+$note = $db->query("select * from notes where id =:id",[':id'=>$id])->findOrFail();
+// dd($note);
+
+
+/**
+ * what if we have authorize($conditon) method that we can use throught out the applicatin
  * 
  */
-// $forbidden = 403; it ok but we need to use this in may different file thats why it good option to create a file with a Response class. 
 
+authorize($note['user_id'] === $courrentUser);
 
-if($note['user_id'] !== $courrentUser){
-    abort(Response::FORBIDDEN);
-}
+// if($note['user_id'] !== $courrentUser){
+    // abort(Response::FORBIDDEN);
+// }
 
 
 include_once './views/note.view.php';

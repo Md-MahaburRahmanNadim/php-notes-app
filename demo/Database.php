@@ -3,6 +3,7 @@
 class Database{
     
     public $connection;
+    public $statement;
     public function __construct($config,$username='laravel_user',$password='Secret123!'){
 //    as the env or config data change according to the env thats why we left those data into upword or outer of this file  into config file; so that we can use different config file to different env
     $dns = 'mysql:'.  http_build_query($config,'',';');
@@ -12,18 +13,38 @@ class Database{
 // AS WE give user name and pass thats why avobe http_build_query work
 
         // $dns = 'mysql:host=localhost;port=3306;user=laravel_user;dbname=laravel_db;charset=utf8mb4;password=Secret123!;';
-$this->$connection = new PDO($dns,$username,$password,[
+$this->connection = new PDO($dns,$username,$password,[
     PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC
 ]);
 
     }
     public function query($query,$parms=[]){
 
-$statement = $this->$connection->prepare($query);
-$statement->execute($parms);
-// $posts = $statement->fetchAll();
-return $statement;
+// $statement = $this->connection->prepare($query);
+// $statement->execute($parms);
+// return $statement;
+
+/**
+ * now we are going to return the instance of that object
+ * 
+ */
+$this->statement = $this->connection->prepare($query);
+$this->statement->execute($parms);
+return $this;
+
     }
+    public function find(){
+        return $this->statement->fetch();
+        
+    }
+    public function findOrFail(){
+       $result= $this->find();
+       if(!$result){
+    abort();
+}
+return $result;
+    }
+    
     
 
 }
