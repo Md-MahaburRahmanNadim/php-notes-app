@@ -1,12 +1,14 @@
 <?php
-function dd($value){
+function dd($value)
+{
     echo '<pre>';
     var_dump($value);
     echo '</pre>';
     die();
 }
-function urlIs($value){
-    return $_SERVER['REQUEST_URI']=== $value;
+function urlIs($value)
+{
+    return $_SERVER['REQUEST_URI'] === $value;
 }
 
 /**
@@ -16,8 +18,9 @@ function urlIs($value){
  * 
  * there we may not sent any code
  */
-function authorize($condtion,$status = Response::FORBIDDEN){
-    if(!$condtion){
+function authorize($condtion, $status = Response::FORBIDDEN)
+{
+    if (!$condtion) {
         abort($status);
     }
 }

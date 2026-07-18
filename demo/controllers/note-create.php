@@ -11,9 +11,8 @@ $db = new Database($config['database']);
 
 $query = "INSERT INTO notes (body,user_id) VALUES (:body,:user_id)";
 if ($_SERVER["REQUEST_METHOD"] === 'POST') {
-    $body = $_POST['body'];
-    $db->query($query, ['body' => $body, 'user_id' => 11]);
     $errors = [];
+
     // if the body is empty then not send
     if (strlen($_POST['body']) === 0) {
 
@@ -22,6 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     if (strlen($_POST['body']) > 1000) {
         $errors['body'] = 'the body cant be more then 1000 char';
     }
+    if (empty($errors)) {
+        $body = $_POST['body'];
+        $db->query($query, ['body' => $body, 'user_id' => 11]);
+    }
 }
-
 include './views/note-create.view.php';
