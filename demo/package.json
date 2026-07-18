@@ -4,7 +4,7 @@
   "description": "A collection of projects and exercises completed while following the **Laracasts PHP for Beginners (2023 Edition)** course.",
   "main": "index.js",
   "scripts": {
-    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "dev": "tailwindcss -i ./src/input.css -o ./public/dist/output.css --watch",
     "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
   },
   "keywords": [],

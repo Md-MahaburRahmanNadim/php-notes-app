@@ -1,3 +1,3 @@
 <?php
 $heading = 'Home';
-include_once './views/index.view.php';
+include_once view('index.view.php');

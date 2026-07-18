@@ -22,3 +22,7 @@ function base_path($path)
 {
     return BASE_PATH . $path;
 }
+function view($path)
+{
+    include_once base_path('views/' . $path);
+}
