@@ -1,9 +1,12 @@
 <?php
-include_once 'functions.php';
-include_once 'Database.php';
-include_once 'Response.php';
+const BASE_PATH = __DIR__ . '/../';
+// include_once base_path('functions.php');
+include_once BASE_PATH . 'functions.php';
+include_once base_path('Database.php');
+include_once base_path('Response.php');
 
-include_once 'router.php';
+include_once base_path('router.php');
+// var_dump(__DIR__ . '/../'); // its will start from demo (project root);
 
 /**
  * we need to change our root directory (from ) project root to (public ) folder 
