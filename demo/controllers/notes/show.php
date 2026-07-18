@@ -1,12 +1,12 @@
 <?php
 $config = include_once 'config.php';
 
-$db= new Database($config['database']);
+$db = new Database($config['database']);
 $courrentUser = 11;
 $heading = 'My Notes';
 $id = $_GET['id'];
 
-$note = $db->query("select * from notes where id =:id",[':id'=>$id])->findOrFail();
+$note = $db->query("select * from notes where id =:id", [':id' => $id])->findOrFail();
 // dd($note);
 
 
@@ -14,9 +14,8 @@ $note = $db->query("select * from notes where id =:id",[':id'=>$id])->findOrFail
 authorize($note['user_id'] === $courrentUser);
 
 // if($note['user_id'] !== $courrentUser){
-    // abort(Response::FORBIDDEN);
+// abort(Response::FORBIDDEN);
 // }
 
 
-include_once './views/note.view.php';
-
+include_once './views/notes/show.view.php';

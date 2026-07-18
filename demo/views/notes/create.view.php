@@ -1,7 +1,7 @@
 <?php
-include_once 'partials/head.php';
-include_once 'partials/nav.php';
-include_once 'partials/banner.php';
+include_once 'views/partials/head.php';
+include_once 'views/partials/nav.php';
+include_once 'views/partials/banner.php';
 
 ?>
 <form method="post">
@@ -25,5 +25,5 @@ include_once 'partials/banner.php';
 </form>
 
 <?php
-include_once 'partials/footer.php'
+include_once './demo/views/partials/footer.php'
 ?>

@@ -25,4 +25,4 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
         $db->query($query, ['body' => $body, 'user_id' => 11]);
     }
 }
-include './views/note-create.view.php';
+include './views/notes/create.view.php';

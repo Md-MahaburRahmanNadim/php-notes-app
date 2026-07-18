@@ -1,15 +1,15 @@
 <?php
 return [
-    '/'=>'controllers/index.php',   
-    '/about'=>'controllers/about.php',
-    '/notes'=>'controllers/notes.php',
+    '/' => 'controllers/index.php',
+    '/about' => 'controllers/about.php',
+    '/notes' => 'controllers/notes/index.php',
     /**
      * /notes its use to view all notes a particuler user
      */
-    '/note'=>'controllers/note.php',
+    '/note' => 'controllers/notes/show.php',
     /**
      * /note/:note or /note = to see a specific id note
      */
-    '/note/create' => 'controllers/note-create.php',
-    '/contract'=>'controllers/contract.php'
-    ];
+    '/note/create' => 'controllers/notes/create.php',
+    '/contract' => 'controllers/contract.php'
+];
