@@ -9,10 +9,12 @@ $db = new Database($config['database']);
  * from there we can write a insert query like below
  * 
  */
-
 $query = "INSERT INTO notes (body,user_id) VALUES (:body,:user_id)";
 if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     $errors = [];
+    if (!Validator::email('nadim@gmail.com')) {
+        dd('give valid email');
+    }
 
     // if the body is empty then not send
     if (!Validator::string($_POST['body'])) {

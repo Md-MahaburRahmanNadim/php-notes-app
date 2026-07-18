@@ -18,4 +18,8 @@ class Validator
         $value = trim($value);
         return strlen($value) > 0 && strlen($value) <= 1000;
     }
+    public static function email($value)
+    {
+        return filter_var($value, FILTER_VALIDATE_EMAIL);
+    }
 }
