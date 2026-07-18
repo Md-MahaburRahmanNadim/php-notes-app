@@ -1,7 +1,9 @@
 <?php
 $heading = 'Create Note';
+include_once 'Validator.php';
 $config = include_once 'config.php';
 $db = new Database($config['database']);
+$validator = new Validator;
 /**
  * in table plus we in history tag we can see how the data is inserted in a table. by inserting a data
  * 
@@ -14,8 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     $errors = [];
 
     // if the body is empty then not send
-    if (strlen($_POST['body']) === 0) {
-
+    if ($validator->string($_POST['body'])) {
         $errors['body'] = 'A body is required';
     }
     if (strlen($_POST['body']) > 1000) {
