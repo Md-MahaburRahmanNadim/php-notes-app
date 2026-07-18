@@ -16,11 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     $errors = [];
 
     // if the body is empty then not send
-    if ($validator->string($_POST['body'])) {
-        $errors['body'] = 'A body is required';
-    }
-    if (strlen($_POST['body']) > 1000) {
-        $errors['body'] = 'the body cant be more then 1000 char';
+    if (!$validator->string($_POST['body'])) {
+        $errors['body'] = 'A body is not be zero and not be over 1000 is required';
     }
     if (empty($errors)) {
         $body = $_POST['body'];
