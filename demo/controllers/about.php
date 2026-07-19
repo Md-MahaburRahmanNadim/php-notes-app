@@ -1,4 +1,3 @@
 <?php
-$heading = 'About';
-include_once './views/about.view.php';
 
+view('about.view.php', ['heading' => 'About']);

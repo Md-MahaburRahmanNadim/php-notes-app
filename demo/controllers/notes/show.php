@@ -1,9 +1,8 @@
 <?php
-$config = include_once 'config.php';
+$config = include_once base_path('config.php');
 
 $db = new Database($config['database']);
 $courrentUser = 11;
-$heading = 'My Notes';
 $id = $_GET['id'];
 
 $note = $db->query("select * from notes where id =:id", [':id' => $id])->findOrFail();
@@ -18,4 +17,4 @@ authorize($note['user_id'] === $courrentUser);
 // }
 
 
-include_once './views/notes/show.view.php';
+view('notes/show.view.php', ['heading' => 'My Notes', 'note' => $note]);

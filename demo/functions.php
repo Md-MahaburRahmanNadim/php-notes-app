@@ -26,5 +26,6 @@ function view($path, $attribute = [])
 {
     extract($attribute);
     // it parse the assoc array and give us a key = variableName and value in value of that variable 
+    // dd(base_path('views/') . $path);
     include_once base_path('views/' . $path);
 }

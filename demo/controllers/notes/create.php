@@ -1,7 +1,6 @@
 <?php
-$heading = 'Create Note';
-include_once 'Validator.php';
-$config = include_once 'config.php';
+include_once base_path('Validator.php');
+$config = include_once base_path('config.php');
 $db = new Database($config['database']);
 /**
  * in table plus we in history tag we can see how the data is inserted in a table. by inserting a data
@@ -9,9 +8,10 @@ $db = new Database($config['database']);
  * from there we can write a insert query like below
  * 
  */
+$errors = [];
+
 $query = "INSERT INTO notes (body,user_id) VALUES (:body,:user_id)";
 if ($_SERVER["REQUEST_METHOD"] === 'POST') {
-    $errors = [];
     if (!Validator::email('nadim@gmail.com')) {
         dd('give valid email');
     }
@@ -25,4 +25,4 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
         $db->query($query, ['body' => $body, 'user_id' => 11]);
     }
 }
-include './views/notes/create.view.php';
+view('notes/create.view.php', ['heading' => 'Create Note', 'errors' => $errors]);

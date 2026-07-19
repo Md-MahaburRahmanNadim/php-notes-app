@@ -1,7 +1,7 @@
 <?php
-include_once 'views/partials/head.php';
-include_once 'views/partials/nav.php';
-include_once 'views/partials/banner.php';
+include_once base_path('views/partials/head.php');
+include_once base_path('views/partials/nav.php');
+include_once base_path('views/partials/banner.php');
 
 ?>
 
@@ -19,5 +19,5 @@ include_once 'views/partials/banner.php';
     </p>
 </ul>
 <?php
-include_once '/views/partials/footer.php'
+include_once base_path('/views/partials/footer.php');
 ?>

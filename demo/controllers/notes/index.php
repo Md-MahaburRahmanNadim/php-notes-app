@@ -1,6 +1,5 @@
 <?php
-$heading = 'My Notes';
-$config = include_once 'config.php';
+$config = include_once base_path('config.php');
 /**
  * | Action           | HTTP Method | URI                | Controller Method |
 | ---------------- | ----------- | ------------------ | ----------------- |
@@ -28,4 +27,4 @@ $db = new Database($config['database']);
 $notes = $db->query("select * from notes where user_id = 11")->get();
 // dd($notes);
 
-include_once './views/notes/index.view.php';
+view('notes/index.view.php', ['db' => $db, 'notes' => $notes, 'heading' => 'My Notes', 'config' => $config]);

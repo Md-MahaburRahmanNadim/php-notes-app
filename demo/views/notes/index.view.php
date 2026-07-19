@@ -1,12 +1,12 @@
 <?php
-include_once 'views/partials/head.php';
-include_once 'views/partials/nav.php';
-include_once 'views/partials/banner.php';
+include_once base_path('views/partials/head.php');
+include_once base_path('views/partials/nav.php');
+include_once base_path('views/partials/banner.php');
 $p = __DIR__;
 // its give us server to the current file folder path.
 /**
- * 'views/...'
- * its give us from project root(from demo) 
+ * base_path('views/...'
+ * its )give us from project root(from demo) 
  */
 
 
@@ -32,5 +32,5 @@ $p = __DIR__;
     </li>
 </p>
 <?php
-include_once './demo/views/partials/footer.php'
+include_once base_path('views/partials/footer.php');
 ?>
