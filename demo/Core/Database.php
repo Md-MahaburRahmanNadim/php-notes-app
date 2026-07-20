@@ -4,28 +4,6 @@ namespace Core;
 
 use PDO;
 
-// new PDO meaning use current namespace => Core\PDO 
-// new \PDO meaning use global namespace 
-// use PDO meaning use global namespace (use PDO) => translate into use \PDO
-
-/**
- * new \PDO meaning look for global root 
- * new PDO meaning look for the current namespace
- */
-
-/**
- * Why is a Namespace?
-
-A namespace is like a folder of your PHP code. It keeps classes, functions and it’s constants organized and avoid conflicts.
-
- *  Your computer allows files with the same name as long as they’re in different folders.
-
- * Similarly, PHP allows two classes with same name as long as they’re in different namespaces.
- * 
- * In PHP, usually, namespace should match the folder structure the file is placed in.
- * https://medium.com/@bluznierca1/understanding-php-namespaces-organising-your-code-ba2590c5e529
- * 
- */
 class Database
 {
 
