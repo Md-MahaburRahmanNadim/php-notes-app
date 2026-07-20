@@ -1,4 +1,6 @@
 <?php
+
+use Core\Response;  // translate into \Core\Response =Search for Core->Response 
 function dd($value)
 {
     echo '<pre>';
