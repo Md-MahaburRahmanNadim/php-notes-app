@@ -5,45 +5,38 @@ namespace Core;
 class Router
 {
     protected $routes = [];
+    protected function add($uri, $controller, $method)
+    {
+        // $this->routes[] = [
+        //     'uri' => $uri,
+        //     'controller' => $controller,
+        //     'method' => $method
+        // ];
+        $this->routes[] = compact('uri', 'controller', 'method');
+        /**
+         * compact is create a key with the name of variable and put the value with value of variable ('uri'=>$uri)
+         * 
+         */
+    }
     public function get($uri, $controller)
     {
-        $this->routes[] = [
-            'uri' => $uri,
-            'controller' => $controller,
-            'method' => 'GET'
-        ];
+        $this->add($uri, $controller, 'GET');
     }
     public function post($uri, $controller)
     {
-        $this->routes[] = [
-            'uri' => $uri,
-            'controller' => $controller,
-            'method' => 'POST'
-        ];
+        $this->add($uri, $controller, 'POST');
     }
     public function delete($uri, $controller)
     {
-        $this->routes[] = [
-            'uri' => $uri,
-            'controller' => $controller,
-            'method' => 'DELETE'
-        ];
+        $this->add($uri, $controller, 'DELETE');
     }
     public function patch($uri, $controller)
     {
-        $this->routes[] = [
-            'uri' => $uri,
-            'controller' => $controller,
-            'method' => 'PATCH'
-        ];
+        $this->add($uri, $controller, 'PATCH');
     }
     public function put($uri, $controller)
     {
-        $this->routes[] = [
-            'uri' => $uri,
-            'controller' => $controller,
-            'method' => 'PUT'
-        ];
+        $this->add($uri, $controller, 'PUT');
     }
     // function routeToController($uri, $routes)
     // {

@@ -16,4 +16,8 @@
 // ];
 $router->get('/', 'controllers/index.php');
 $router->get('/about', 'controllers/about.php');
+$router->get('/contract', 'controllers/contract.php');
+
 $router->get('/notes', 'controllers/notes/index.php');
+$router->get('/note', 'controllers/notes/show.php');
+$router->get('/note/create', 'controllers/notes/create.php');

@@ -3,7 +3,7 @@
 use Core\Database;
 use Core\Validator;
 
-include_once base_path('Validator.php');
+// include_once base_path('Validator.php');
 $config = include_once base_path('config.php');
 $db = new Database($config['database']);
 
