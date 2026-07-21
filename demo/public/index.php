@@ -10,4 +10,6 @@ spl_autoload_register(function ($class) {
     $class = str_replace('\\', '/', $class);
     include_once base_path($class . '.php');
 });
-include_once base_path('Core/' . 'router.php');
+include_once base_path('Core/' . 'Router.php');
+$router = new \Core\Router;
+include_once base_path('routes.php');
