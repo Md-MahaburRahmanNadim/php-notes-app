@@ -16,4 +16,4 @@
 // ];
 $router->get('/', 'controllers/index.php');
 $router->get('/about', 'controllers/about.php');
-dd($router->routes);
+$router->get('/notes', 'controllers/notes/index.php');

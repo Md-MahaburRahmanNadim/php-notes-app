@@ -45,27 +45,29 @@ class Router
             'method' => 'PUT'
         ];
     }
+    // function routeToController($uri, $routes)
+    // {
+    //     if (array_key_exists($uri, $routes)) {
+
+    //         require_once base_path($routes[$uri]);
+    //     } else {
+
+    //         abort();
+    //     }
+    // }
+    public function route($uri, $method)
+    {
+        foreach ($this->routes as $route) {
+            if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
+                return require_once base_path($route['controller']);
+            }
+        }
+        $this->abort();
+    }
+    public function abort($code = 404)
+    {
+        http_response_code($code);
+        require_once base_path("views/{$code}.php");
+        die();
+    }
 }
-
-
-
-// function abort($code = 404)
-// {
-//     http_response_code($code);
-//     require_once base_path("views/{$code}.php");
-//     die();
-// }
-// function routeToController($uri, $routes)
-// {
-//     if (array_key_exists($uri, $routes)) {
-
-//         require_once base_path($routes[$uri]);
-//     } else {
-
-//         abort();
-//     }
-// }
-// $fullUri = $_SERVER['REQUEST_URI'];
-// $uri = parse_url($fullUri)['path'];
-// $routes = include_once base_path('routes.php');
-// routeToController($uri, $routes);

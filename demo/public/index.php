@@ -12,4 +12,11 @@ spl_autoload_register(function ($class) {
 });
 include_once base_path('Core/' . 'Router.php');
 $router = new \Core\Router;
+
+$fullUri = $_SERVER['REQUEST_URI'];
+$uri = parse_url($fullUri)['path'];
+$method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
+// $routes = include_once base_path('routes.php');
 include_once base_path('routes.php');
+// routeToController($uri, $routes);
+$router->route($uri, $method);

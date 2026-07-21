@@ -18,6 +18,9 @@ include_once base_path('views/partials/banner.php');
     </p>
 </ul>
 <form method="POST">
+    <!-- bypassing the default (get and post ) method -->
+    <input type="hidden" name="_method" value="DELETE">
+
     <input type="hidden" name="id" value="<?= $note['id'] ?>">
     <button type="submit" class="mt-xl text-red-400 text-sm">Delete</button>
 </form>
