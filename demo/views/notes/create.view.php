@@ -4,7 +4,7 @@ include_once base_path('views/partials/nav.php');
 include_once base_path('views/partials/banner.php');
 
 ?>
-<form method="post">
+<form method="post" action="/notes">
     <label for="body">My Note</label>
 
     <p>
